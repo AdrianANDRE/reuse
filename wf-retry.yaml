@@ -34,6 +34,15 @@ jobs:
         -  uses: robotframework/robot@v1
            with:
                datasource: robotTFParamCheck/robot_community.robot
+  thisIsASuccess:
+    runs-on: junit
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: https://github.com/SquashTF-workshop/junitCalc
+    - uses: junit/execute@v1
+      with:
+        test: junitCalc/squash.tfauto.CalculatorTest#addSuccess
 outputs:
   workflow_output1:
     description: "The first job output"
