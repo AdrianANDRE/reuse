@@ -13,7 +13,8 @@ jobs:
   inputs-job:
     runs-on: ['linux']
     steps:
-      - run: echo "hello ${{ inputs.b }}"
+      - run: echo "hello ${{ inputs.input_a }}"
+      - run: echo "hello ${{ inputs.input_b }}"
   output-job:
     runs-on: ['linux']
     outputs:
