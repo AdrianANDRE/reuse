@@ -25,8 +25,9 @@ jobs:
       run: echo "::set-output name=test::hello"
     - id: step2
       run: echo "::set-output name=test::world"
-  thisIsAFailure:
+  robot2:
         runs-on: ['robotframework']
+        needs: thisIsAFailure
         steps:
         -  uses: actions/checkout@v2
            with:
@@ -36,6 +37,7 @@ jobs:
                datasource: robotTFParamCheck/robot_community.robot
   thisIsASuccess:
     runs-on: junit
+    needs: robot2
     steps:
     - uses: actions/checkout@v2
       with:
