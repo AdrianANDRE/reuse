@@ -1,0 +1,7 @@
+metadata:
+  name: Env Vars
+jobs:
+  job:
+    runs-on: ['linux']
+    steps:
+    - run: echo 'hello world'
