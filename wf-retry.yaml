@@ -11,6 +11,7 @@ inputs:
     default: '1'
 jobs:
   inputs-job:
+    needs: robot-init
     runs-on: ['linux']
     steps:
       - run: echo "hello ${{ inputs.input_a }}"
