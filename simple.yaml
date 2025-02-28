@@ -5,3 +5,12 @@ jobs:
     runs-on: ['linux']
     steps:
     - run: echo 'hello world'
+  robot-retryer:
+        runs-on: ['robotframework']
+        steps:
+        -  uses: actions/checkout@v2
+           with:
+              repository: https://github.com/SquashTF-workshop/robotTFParamCheck
+        -  uses: robotframework/robot@v1
+           with:
+               failed: robotTFParamCheck/robot_community.robot
