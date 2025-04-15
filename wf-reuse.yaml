@@ -26,7 +26,7 @@ jobs:
       run: echo "::set-output name=test::hello"
     - id: step2
       run: echo "::set-output name=test::world"
-  robot-retryer:
+  robot-reuse:
         runs-on: ['robotframework']
         steps:
         -  uses: actions/checkout@v2
@@ -35,7 +35,7 @@ jobs:
         -  uses: robotframework/robot@v1
            with:
                datasource: robotTFParamCheck/robot_community.robot
-  junit-retryer:
+  junit-reuse:
     runs-on: junit
     needs: robot-retryer
     steps:
