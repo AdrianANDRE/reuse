@@ -13,8 +13,8 @@ jobs:
   inputs-job:
     runs-on: ['linux']
     steps:
-      - run: echo "hello ${{ inputs.input_a }}"
-      - run: echo "hello ${{ inputs.input_b }}"
+      - run: echo "Expected: input_a_value", "Actual: ${{ inputs.input_a }}"
+      - run: echo "Expected: input_b_value", "Actual: ${{ inputs.input_b }}"
       - run: echo $VAR_OWL
   output-job:
     runs-on: ['linux']
