@@ -37,7 +37,7 @@ jobs:
                datasource: robotTFParamCheck/robot_community.robot
   junit-reuse:
     runs-on: junit
-    needs: robot-retryer
+    needs: robot-reuse
     steps:
     - uses: actions/checkout@v2
       with:
